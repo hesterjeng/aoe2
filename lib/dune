@@ -1,2 +1,30 @@
 (library
- (name ocaml_template))
+ (libraries
+  fmt
+  containers
+  containers-data
+  ptime
+  eio_main
+  iter
+  cmdliner
+  landmarks
+  owl
+  piaf)
+ (preprocess
+  (pps ppx_deriving.std ppx_yojson_conv ppx_variants_conv ppx_fields_conv))
+ (name aoe2lib))
+
+(env
+ (_
+  (flags
+   :standard
+   -w
+   -32
+   -warn-error
+   -a+8
+   -open
+   Containers
+   -open
+   Ppx_yojson_conv_lib.Yojson_conv.Primitives
+   -strict-sequence
+   -safe-string)))

@@ -1,7 +1,7 @@
 (executable
- (public_name ocaml_template)
+ (public_name main)
  (promote
   (until-clean)
   (into ..))
  (name main)
- (libraries ocaml_template))
+ (libraries aoe2lib))
